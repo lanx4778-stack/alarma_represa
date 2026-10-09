@@ -543,9 +543,11 @@ if clase_estado == "danger":
     )
     if sonido_activado:
         ruta_audio = Path(__file__).parent / "alarma.mp3"
-        if ruta_audio.is_file():
-            st.audio(str(ruta_audio), format="audio/mp3",
-                     autoplay=True, loop=True)
+               if ruta_audio.is_file():
+            st.audio(str(ruta_audio), format="audio/mp3", autoplay=True, loop=True)
+        else:
+            st.audio(obtener_sirena(), format="audio/wav", autoplay=True, loop=True)
+
         
         
 
